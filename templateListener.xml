@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/templatelistener.xsd">
+	<import>
+		<templatelistener name="javascriptInfiniteScrollInclude">
+			<environment>user</environment>
+			<templatename>headInclude</templatename>
+			<eventname>javascriptInclude</eventname>
+			<templatecode><![CDATA[<script data-relocate="true" src="{@$__wcf->getPath('wcf')}js/3rdParty/jquery.infinitescroll.min.js" type="text/javascript"></script>]]></templatecode>
+		</templatelistener>
+		<templatelistener name="infiniteScroll">
+			<environment>user</environment>
+			<templatename>footer</templatename>
+			<eventname>footer</eventname>
+			<templatecode>
+				<![CDATA[<script data-relocate="true" type="text/javascript">
+					jQuery('.messageList').infinitescroll({
+						navSelector  : ".pageNavigation:last > ul",            
+						nextSelector : ".pageNavigation:last > ul > li:last > a",    
+						itemSelector : ".messageList > li",
+						loading: {
+							finishedMsg: "<p class='info'>Keine weiteren Inhalte.</p>",
+							msgText: "<p class='info'>Lade...</p>"
+						},
+						debug: true,
+						maxPage: parseInt($(".pageNavigation:last > ul > li.button.skip").prev().children().text()),
+						pathParse: function(path, nextPage){                                   
+							var re = new RegExp('^(.*?pageNo=)'+nextPage+'(\/.*|$)');    
+							path = path.match(re).slice(1);   
+							return path;
+						}
+					});</script>]]>
+			</templatecode>
+		</templatelistener>
+	</import>
+</data>

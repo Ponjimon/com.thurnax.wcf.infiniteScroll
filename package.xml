@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package name="com.thurnax.wbb.infiniteScroll" xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/package.xsd">
+	<packageinformation>
+		<packagename>InfiniteScroll</packagename>
+		<packagedescription>Diese Erweiterung ermöglicht es, Beiträge eines Themas dynamisch nachzuladen. Somit muss man nicht mehr auf die nächste Seite wechseln.</packagedescription>
+		<version>0.1.0</version>
+		<date>2013-12-29</date>
+	</packageinformation>
+	
+	<authorinformation>
+		<author>Thurnax.com</author>
+		<authorurl>http://board.thurnax.com</authorurl>
+	</authorinformation>
+	
+	<requiredpackages>
+		<requiredpackage minversion="2.0.0">com.woltlab.wcf</requiredpackage>
+		<requiredpackage minversion="4.0.0">com.woltlab.wbb</requiredpackage>
+	</requiredpackages>
+	
+	<instructions type="install">
+		<instruction type="file">file.tar</instruction>
+		<instruction type="templateListener">templateListener.xml</instruction>
+	</instructions>
+</package>
