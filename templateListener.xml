@@ -14,21 +14,24 @@
 			<templatecode>
 				<![CDATA[<script data-relocate="true" type="text/javascript">
 					jQuery('.messageList').infinitescroll({
-						navSelector  : ".pageNavigation:last > ul",            
-						nextSelector : ".pageNavigation:last > ul > li:last > a",    
-						itemSelector : ".messageList > li",
+						navSelector  : ".pageNavigation:last > ul",
+						nextSelector : ".pageNavigation:last > ul > li:last > a",
+						itemSelector : ".messageList > li:not(:last-child)",
 						loading: {
 							finishedMsg: "<p class='info'>Keine weiteren Inhalte.</p>",
 							msgText: "<p class='info'>Lade...</p>"
 						},
 						debug: true,
 						maxPage: parseInt($(".pageNavigation:last > ul > li.button.skip").prev().children().text()),
-						pathParse: function(path, nextPage){                                   
-							var re = new RegExp('^(.*?pageNo=)'+nextPage+'(\/.*|$)');    
-							path = path.match(re).slice(1);   
+						pathParse: function(path, nextPage){
+							var re = new RegExp('^(.*?pageNo=)'+nextPage+'(\/.*|$)');
+							path = path.match(re).slice(1);
 							return path;
 						}
-					});</script>]]>
+					}, function(elems) {
+						jQuery('#messageQuickReply').appendTo(jQuery('.messageList'))
+					});
+				</script>]]>
 			</templatecode>
 		</templatelistener>
 	</import>
