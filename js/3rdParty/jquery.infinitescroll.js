@@ -485,11 +485,8 @@
             }
 
             opts.loading.msg
-            .find('img')
-            .hide()
-            .parent()
-            .find('div').html(opts.loading.finishedMsg).animate({ opacity: 1 }, 2000, function () {
-                $(this).parent().fadeOut(opts.loading.speed);
+            .html(opts.loading.finishedMsg).animate({ opacity: 1 }, 2000, function () {
+                $(this).fadeOut(opts.loading.speed);
             });
 
             // user provided callback when done
