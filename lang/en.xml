@@ -4,6 +4,7 @@
 	<category name="wcf.infiniteScroll">
 		<item name="wcf.infiniteScroll.load"><![CDATA[Loading content...]]></item>
 		<item name="wcf.infiniteScroll.noContent"><![CDATA[No further content.]]></item>
+		<item name="wcf.infiniteScroll.moreContent"><![CDATA[Load more]]></item>
 	</category>
 
 </language>
