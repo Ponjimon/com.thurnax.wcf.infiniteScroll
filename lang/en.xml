@@ -2,9 +2,9 @@
 <language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="en">
 
 	<category name="wcf.infiniteScroll">
-		<item name="wcf.infiniteScroll.load"><![CDATA[Loading content...]]></item>
+		<item name="wcf.infiniteScroll.load"><![CDATA[Loading content…]]></item>
 		<item name="wcf.infiniteScroll.noContent"><![CDATA[No further content.]]></item>
-		<item name="wcf.infiniteScroll.moreContent"><![CDATA[Load more]]></item>
+		<item name="wcf.infiniteScroll.moreContent"><![CDATA[Load more content]]></item>
 	</category>
 
 </language>
