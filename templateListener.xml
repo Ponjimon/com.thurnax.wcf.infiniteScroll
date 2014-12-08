@@ -14,6 +14,7 @@
 			<templatecode>
 				<![CDATA[<script data-relocate="true" type="text/javascript">
 					jQuery('<li class="recentActivitiesMore marginTop infiniteScrollMore" style="text-align:center;"><button class="small">{lang}wcf.infiniteScroll.moreContent{/lang}</button></li>').appendTo(jQuery('.messageList'));
+					if(jQuery(".pageNavigation ul li:last").hasClass("skip disabled")) { jQuery(".infiniteScrollMore").hide(); }
 					jQuery('.messageList').infinitescroll({
 						navSelector  : ".pageNavigation:last > ul",
 						nextSelector : ".pageNavigation:last > ul > li:last > a",
@@ -26,8 +27,9 @@
 							isPaused: true
 						},
 						debug: {if !ENABLE_DEBUG_MODE}false{else}true{/if},
-						maxPage: parseInt($(".pageNavigation:last > ul > li.button.skip").prev().children().text()),
+						maxPage: parseInt(jQuery(".pageNavigation:last > ul > li.button.skip").prev().children().text()),
 						pathParse: function(path, nextPage){
+							nextPage = parseInt(jQuery(".pageNavigation:last > ul > li.active").next().children().text());
 							var re = new RegExp('^(.*?pageNo=)'+nextPage+'(\/.*|$)');
 							path = path.match(re).slice(1);
 							return path;
@@ -36,7 +38,7 @@
 						jQuery('#messageQuickReply').appendTo(jQuery('.messageList'));
 					});
 					jQuery('.infiniteScrollMore').on('click', function() {
-						jQuery('.messageList').infinitescroll('toggle').infinitescroll('scroll');
+						jQuery('.messageList').infinitescroll('retrieve').infinitescroll('resume');
 						jQuery(this).fadeOut("fast").remove();
 					});
 				</script>]]>
