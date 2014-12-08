@@ -3,13 +3,13 @@
 	<packageinformation>
 		<packagename>InfiniteScroll</packagename>
 		<packagedescription>Diese Erweiterung ermöglicht es, Inhalte dynamisch nachzuladen. Somit muss man nicht mehr auf die nächste Seite wechseln.</packagedescription>
-		<version>0.1.0</version>
-		<date>2014-10-21</date>
+		<version>0.2.0</version>
+		<date>2014-12-08</date>
 	</packageinformation>
 	
 	<authorinformation>
 		<author>Thurnax.com</author>
-		<authorurl>http://board.thurnax.com</authorurl>
+		<authorurl>https://www.thurnax.com</authorurl>
 	</authorinformation>
 	
 	<requiredpackages>
@@ -17,6 +17,7 @@
 	</requiredpackages>
 	
 	<instructions type="install">
+		<instruction type="language">lang/*.xml</instruction>
 		<instruction type="file">file.tar</instruction>
 		<instruction type="templateListener">templateListener.xml</instruction>
 	</instructions>
