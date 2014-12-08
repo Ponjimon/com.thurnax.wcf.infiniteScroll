@@ -18,7 +18,7 @@
 						nextSelector : ".pageNavigation:last > ul > li:last > a",
 						itemSelector : ".messageList > li:not(:last-child)",
 						loading: {
-							finishedMsg: "<p class='info'>" + WCF.Language.get('wcf.infiniteScroll.noMoreContent') + /p>",
+							finishedMsg: "<p class='info'>" + WCF.Language.get('wcf.infiniteScroll.noMoreContent') + "</p>",
 							msgText: "<p class='info'>" + WCF.Language.get('wcf.infiniteScroll.load') + "</p>"
 						},
 						debug: true,
