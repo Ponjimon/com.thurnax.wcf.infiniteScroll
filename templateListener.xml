@@ -18,8 +18,8 @@
 						nextSelector : ".pageNavigation:last > ul > li:last > a",
 						itemSelector : ".messageList > li:not(:last-child)",
 						loading: {
-							finishedMsg: "<p class='info'>Keine weiteren Inhalte.</p>",
-							msgText: "<p class='info'>Lade...</p>"
+							finishedMsg: "<p class='info'>" + WCF.Language.get('wcf.infiniteScroll.noMoreContent') + /p>",
+							msgText: "<p class='info'>" + WCF.Language.get('wcf.infiniteScroll.load') + "</p>"
 						},
 						debug: true,
 						maxPage: parseInt($(".pageNavigation:last > ul > li.button.skip").prev().children().text()),
@@ -33,6 +33,12 @@
 					});
 				</script>]]>
 			</templatecode>
+		</templatelistener>
+		<templatelistener name="javascriptLanguageImport">
+			<environment>user</environment>
+			<templatename>headInclude</templatename>
+			<eventname>javascriptLanguageImport</eventname>
+			<templatecode><![CDATA[,'wcf.infiniteScroll.load': '{lang}wcf.infiniteScroll.load{/lang}','wcf.infiniteScroll.noMoreContent': '{lang}wcf.infiniteScroll.noMoreContent{/lang}']]></templatecode>
 		</templatelistener>
 	</import>
 </data>
