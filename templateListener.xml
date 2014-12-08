@@ -25,7 +25,7 @@
 						state: {
 							isPaused: true
 						},
-						debug: true,
+						debug: {if !ENABLE_DEBUG_MODE}false{else}true{/if},
 						maxPage: parseInt($(".pageNavigation:last > ul > li.button.skip").prev().children().text()),
 						pathParse: function(path, nextPage){
 							var re = new RegExp('^(.*?pageNo=)'+nextPage+'(\/.*|$)');
