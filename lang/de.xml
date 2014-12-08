@@ -3,7 +3,7 @@
 
 	<category name="wcf.infiniteScroll">
 		<item name="wcf.infiniteScroll.load"><![CDATA[Lade weitere Inhalte...]]></item>
-		<item name="wcf.infiniteScroll.noMoreContent"><![CDATA[Keine weiteren Inhalte.]]></item>
+		<item name="wcf.infiniteScroll.noContent"><![CDATA[Keine weiteren Inhalte.]]></item>
 	</category>
 
 </language>
