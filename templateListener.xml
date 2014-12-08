@@ -13,13 +13,17 @@
 			<eventname>footer</eventname>
 			<templatecode>
 				<![CDATA[<script data-relocate="true" type="text/javascript">
+					jQuery('<li class="recentActivitiesMore marginTop infiniteScrollMore" style="text-align:center;"><button class="small">{lang}wcf.infiniteScroll.moreContent{/lang}</button></li>').appendTo(jQuery('.messageList'));
 					jQuery('.messageList').infinitescroll({
 						navSelector  : ".pageNavigation:last > ul",
 						nextSelector : ".pageNavigation:last > ul > li:last > a",
 						itemSelector : ".messageList > li:not(:last-child)",
 						loading: {
-							finishedMsg: "<p class='info'>" + WCF.Language.get('wcf.infiniteScroll.noMoreContent') + "</p>",
-							msgText: "<p class='info'>" + WCF.Language.get('wcf.infiniteScroll.load') + "</p>"
+							finishedMsg: "<p class='info'>{lang}wcf.infiniteScroll.noContent{/lang}</p>",
+							msg: jQuery('<div id="infscr-loading"><p class="info">{lang}wcf.infiniteScroll.load{/lang}</p></div>')
+						},
+						state: {
+							isPaused: true
 						},
 						debug: true,
 						maxPage: parseInt($(".pageNavigation:last > ul > li.button.skip").prev().children().text()),
@@ -29,16 +33,14 @@
 							return path;
 						}
 					}, function(elems) {
-						jQuery('#messageQuickReply').appendTo(jQuery('.messageList'))
+						jQuery('#messageQuickReply').appendTo(jQuery('.messageList'));
+					});
+					jQuery('.infiniteScrollMore').on('click', function() {
+						jQuery('.messageList').infinitescroll('toggle').infinitescroll('scroll');
+						jQuery(this).fadeOut("fast").remove();
 					});
 				</script>]]>
 			</templatecode>
-		</templatelistener>
-		<templatelistener name="javascriptLanguageImport">
-			<environment>user</environment>
-			<templatename>headInclude</templatename>
-			<eventname>javascriptLanguageImport</eventname>
-			<templatecode><![CDATA[,'wcf.infiniteScroll.load': '{lang}wcf.infiniteScroll.load{/lang}','wcf.infiniteScroll.noContent': '{lang}wcf.infiniteScroll.noContent{/lang}']]></templatecode>
 		</templatelistener>
 	</import>
 </data>
