@@ -38,7 +38,7 @@
 			<environment>user</environment>
 			<templatename>headInclude</templatename>
 			<eventname>javascriptLanguageImport</eventname>
-			<templatecode><![CDATA[,'wcf.infiniteScroll.load': '{lang}wcf.infiniteScroll.load{/lang}','wcf.infiniteScroll.noMoreContent': '{lang}wcf.infiniteScroll.noMoreContent{/lang}']]></templatecode>
+			<templatecode><![CDATA[,'wcf.infiniteScroll.load': '{lang}wcf.infiniteScroll.load{/lang}','wcf.infiniteScroll.noContent': '{lang}wcf.infiniteScroll.noContent{/lang}']]></templatecode>
 		</templatelistener>
 	</import>
 </data>
