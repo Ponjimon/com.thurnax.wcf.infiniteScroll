@@ -3,8 +3,8 @@
 	<packageinformation>
 		<packagename>InfiniteScroll</packagename>
 		<packagedescription>Diese Erweiterung ermöglicht es, Inhalte dynamisch nachzuladen. Somit muss man nicht mehr auf die nächste Seite wechseln.</packagedescription>
-		<version>0.2.0</version>
-		<date>2014-12-08</date>
+		<version>0.5.0 RC</version>
+		<date>2014-12-12</date>
 	</packageinformation>
 	
 	<authorinformation>
