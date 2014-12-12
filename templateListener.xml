@@ -14,7 +14,7 @@
 			<templatecode>
 				<![CDATA[<script data-relocate="true" type="text/javascript">
 					jQuery('<li class="recentActivitiesMore marginTop infiniteScrollMore" style="text-align:center;"><button class="small">{lang}wcf.infiniteScroll.moreContent{/lang}</button></li>').appendTo(jQuery('.messageList'));
-					if(jQuery(".pageNavigation ul li:last").hasClass("skip disabled")) { jQuery(".infiniteScrollMore").hide(); }
+					if((jQuery(".pageNavigation").length == 0) || (jQuery(".pageNavigation ul li:last").hasClass("skip disabled"))) { jQuery(".infiniteScrollMore").hide(); }
 					jQuery('.messageList').infinitescroll({
 						navSelector  : ".pageNavigation:last > ul",
 						nextSelector : ".pageNavigation:last > ul > li:last > a",
